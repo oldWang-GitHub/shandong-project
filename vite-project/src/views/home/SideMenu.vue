@@ -26,10 +26,10 @@
 </template>
    
   <script setup>
-// import {useRoute} from 'vue-router'
+import {useRoute} from 'vue-router'
 import { computed } from 'vue'
 
-// const route = useRoute()
+const route = useRoute()
 const propsDate = defineProps({
   itemList: {
     type: Array
@@ -37,18 +37,22 @@ const propsDate = defineProps({
 })
 // 设置默认选中的菜单项，默认项为第一个
 const toIndex = computed(() => {
-  return propsDate.itemList[0].path
+  // 获取当前路径
+  const path = route.path
+  
+  return path
 })
 </script>
    
   <style lang="scss" scoped>
+  @import '../../assets/variables.scss';
 /* 左侧菜单栏定位和位置大小设定 */
 .sidebar {
   width: 100%;
   height: 100%;
 
   &-el-menu {
-    background-color: #111a1e;
+    background-color: $sidebar-backgroundColor;
     // 去除边框
     border: none;
     width: 100%;
@@ -57,16 +61,16 @@ const toIndex = computed(() => {
     &-item {
       font-size: 14px;
       // padding-left: 35px;
-      color: #fff;
+      color: $sidebar-fontcolor-unselected;
       // transition: all 0.1s;
       --el-menu-base-level-padding: 0px;
       --el-menu-level-padding: 0px;
       &:hover{
-        background-color: #111a1e;
+        background-color: $content-backgroundColor;
         transform: scale(1.05);
         // color: rgba(255, 255, 255, 0.3);
       }
-      margin: 1px 2px;
+      padding: 1px 2px;
       position: relative;
       &-shape {
         position: absolute;
@@ -75,7 +79,7 @@ const toIndex = computed(() => {
         // 取消填充
         fill: none;
         // 定义一条线
-        stroke: #fff;
+        stroke: $sidebar-fontcolor-unselected;
         // 定义线的宽度
         stroke-width: 6;
         // 设置虚线 长度 间隔
@@ -90,16 +94,19 @@ const toIndex = computed(() => {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        color: #fff;
+        color: $sidebar-fontcolor-unselected;
         letter-spacing: 2px;
       }
       /* 左侧二级菜单选中时的样式 */
+      &.is-active{
+        background-color: $content-backgroundColor;
+      }
       &.is-active &-text {
-        color: #3debec;
-        // background: #3989fa;
+        color: $sidebar-fontcolor-selected;
+        // background-color: #021132;
       }
       &.is-active &-shape {
-        stroke: #3debec;
+        stroke: $sidebar-fontcolor-selected;
         stroke-width: 3;
         stroke-dasharray: 50 0;
         stroke-dashoffset: 0;

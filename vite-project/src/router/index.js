@@ -24,7 +24,7 @@ const routes = [
           title: '综合监控中心'
         },
         component: () => import('../views/page/page1/index.vue'),
-        redirect: '/page1/page1-1/',  // 重定向到第一个子页面
+        redirect: '/page1/page1-1',  // 重定向到第一个子页面
         children: [
           {
             path: '/page1/page1-1',
@@ -34,22 +34,22 @@ const routes = [
             },
             component: () => import('../views/page/page1/Page1-1.vue')
           },
-          // {
-          //   path: '/page1/page1-2',
-          //   name: 'page1-2',
-          //   meta: {
-          //     title: '页面1-2'
-          //   },
-          //   component: () => import('../views/page/page1/Page1-2.vue')
-          // },
-          // {
-          //   path: '/page1/page1-3',
-          //   name: 'page1-3',
-          //   meta: {
-          //     title: '页面1-3'
-          //   },
-          //   component: () => import('../views/page/page1/Page1-3.vue')
-          // },
+          {
+            path: '/page1/page1-2',
+            name: 'page1-2',
+            meta: {
+              title: '页面1-2'
+            },
+            component: () => import('../views/page/page1/Page1-2.vue')
+          },
+          {
+            path: '/page1/page1-3',
+            name: 'page1-3',
+            meta: {
+              title: '页面1-3'
+            },
+            component: () => import('../views/page/page1/Page1-3.vue')
+          },
           // {
           //   path: '/page1/page1-4',
           //   name: 'page1-4',

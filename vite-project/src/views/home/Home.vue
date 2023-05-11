@@ -73,7 +73,7 @@ const itemList = computed(() => {
   return store.state.menuList
 })
 
-// 获取响应式用户名
+// 获取用户名
 const username = ref(store.state.userInfo.userName)
 
 // 根据路径绑定到对应的一级菜单，防止页面刷新重新跳回第一个
@@ -116,29 +116,25 @@ function handleCommand(command) {
 }
 </script>
 <style lang="scss" scoped>
-@keyframes move {
-  to {
-    transform: translate(50%, 50%);
-  }
-}
+@import '../../assets/variables.scss';
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background: #111a1e;
+  background: $nav-backgroundColor;
 }
 .header {
   box-sizing: border-box;
   width: 100%;
   height: 70px;
   font-size: 22px;
-  background-color: #111a1e;
+  background-color: $nav-backgroundColor;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &-logo {
     font-size: 22px;
-    color: #3debec;
+    color: $nav-fontcolor;
     margin-left: 50px;
   }
 
@@ -147,10 +143,10 @@ function handleCommand(command) {
     margin-left: 50px;
     background: transparent;
     &-menu {
-      background-color: #111a1e;
+      background-color: $nav-backgroundColor;
       border-bottom: none;
       &-item {
-        color: #3debec;
+        color: $nav-fontcolor;
         font-size: 16px;
         margin: 0 15px;
         &.is-active {
@@ -182,7 +178,7 @@ function handleCommand(command) {
         &-link {
           font-size: 16px;
           cursor: pointer;
-          color: #3debec;
+          color: $nav-fontcolor;
           border: none;
         }
         &-dropmenu {

@@ -43,8 +43,8 @@ const secMenuList = computed(()=>{
   &-content {
     width: calc(100vw - 200px);
     height: 100%;
-    background: #f55;
-    padding: 20px;
+    background: #021132;
+    padding: 10px;
     overflow: auto;
   }
 }

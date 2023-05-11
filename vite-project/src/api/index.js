@@ -15,12 +15,13 @@ export default {
 			mock: true, // 局部mock设置, 优先级更高, 是否走mock接口
 		});
 	},
-	getMainData() {
+	// 获取图纸数据 传入参数为url
+	getMeta2dData(url) {
 		return request({
 			method: "get",
-			url: "/data/main",
+			url: url,
 			data: {},
 			mock: true,
 		});
-	}
+	},
 };

@@ -6,24 +6,11 @@
 </template>
   <script setup>
 import { onMounted } from 'vue'
-import { Meta2d } from '@meta2d/core'
-// import { parseSvg } from "@meta2d/svg"
-import data from '../../../data/光伏发电模块一次系统图.json'
+// 引入封装的meta2d方法
+import {initMeta2d} from '../../../utils/useMeta2d'
+import data from '../../../data/光伏发电模块.json'
 onMounted(() => {
-  const meta2d = new Meta2d('meta2d')
-  const options = {
-    disableScale: true, // 禁止缩放
-    disableTranslate: true, // 禁止平移
-    disableInput: true // 禁止双击后输入
-  }
-  meta2d.setOptions(options)
-  meta2d.open(data)
-  // 设置预览模式，不可编辑
-  meta2d.lock(1)
-
-  meta2d.fitView(false)
-  // meta2d.canvas.addCaches = deepClone(data.pens)
-  // console.log(json);
+  initMeta2d(data)
 })
 </script>
   
