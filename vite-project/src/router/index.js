@@ -121,39 +121,39 @@ const routes = [
 
     ]
 },
-// {
-//   path: '/page3',
-//   name: 'page3',
-//   meta: {
-//     title: '储能系统管理'
-//   },
-//   component: () => import('../views/page/page3/index.vue'),
-//   redirect: '/page3/page3-1',  // 重定向到第一个子页面
-//   children: [
-//     {
-//       path: '/page3/page3-1',
-//       name: 'page3-1',
-//       meta: {
-//         title: '页面3-1'
-//       },
-//       component: () => import('../views/page/page3/Page3-1.vue')
-//     },
-//     {
-//       path: '/page3/page3-2',
-//       name: 'page3-2',
-//       meta: {
-//         title: '页面3-2'
-//       },
-//       component: () => import('../views/page/page3/Page3-2.vue')
-//     },
-//     {
-//       path: '/page3/page3-3',
-//       name: 'page3-3',
-//       meta: {
-//         title: '页面3-3'
-//       },
-//       component: () => import('../views/page/page3/Page3-3.vue')
-//     },
+{
+  path: '/page3',
+  name: 'page3',
+  meta: {
+    title: '储能系统管理'
+  },
+  component: () => import('../views/page/page3/index.vue'),
+  redirect: '/page3/page3-1',  // 重定向到第一个子页面
+  children: [
+    {
+      path: '/page3/page3-1',
+      name: 'page3-1',
+      meta: {
+        title: '页面3-1'
+      },
+      component: () => import('../views/page/page3/Page3-1.vue')
+    },
+    {
+      path: '/page3/page3-2',
+      name: 'page3-2',
+      meta: {
+        title: '页面3-2'
+      },
+      component: () => import('../views/page/page3/Page3-2.vue')
+    },
+    // {
+    //   path: '/page3/page3-3',
+    //   name: 'page3-3',
+    //   meta: {
+    //     title: '页面3-3'
+    //   },
+    //   component: () => import('../views/page/page3/Page3-3.vue')
+    // },
 //     {
 //       path: '/page3/page3-4',
 //       name: 'page3-4',
@@ -171,112 +171,112 @@ const routes = [
 //       component: () => import('../views/page/page3/Page3-5.vue')
 //     },
 
-//   ]
-// },
-// {
-//   path: '/page4',
-//   name: 'page4',
-//   meta: {
-//     title: '智能决策中心'
-//   },
-//   component: () => import('../views/page/page4/index.vue'),
-//   redirect: '/page4/page4-1',  // 重定向到第一个子页面
-//   children: [
-//     {
-//       path: '/page4/page4-1',
-//       name: 'page4-1',
-//       meta: {
-//         title: '页面4-1'
-//       },
-//       component: () => import('../views/page/page4/Page4-1.vue')
-//     },
-//     {
-//       path: '/page4/page4-2',
-//       name: 'page4-2',
-//       meta: {
-//         title: '页面4-2'
-//       },
-//       component: () => import('../views/page/page4/Page4-2.vue')
-//     },
-//     {
-//       path: '/page4/page4-3',
-//       name: 'page4-3',
-//       meta: {
-//         title: '页面4-3'
-//       },
-//       component: () => import('../views/page/page4/Page4-3.vue')
-//     },
-//     {
-//       path: '/page4/page4-4',
-//       name: 'page4-4',
-//       meta: {
-//         title: '页面4-4'
-//       },
-//       component: () => import('../views/page/page4/Page4-4.vue')
-//     },
-//     {
-//       path: '/page4/page4-5',
-//       name: 'page4-5',
-//       meta: {
-//         title: '页面4-5'
-//       },
-//       component: () => import('../views/page/page4/Page4-5.vue')
-//     },
+  ]
+},
+{
+  path: '/page4',
+  name: 'page4',
+  meta: {
+    title: '智能决策中心'
+  },
+  component: () => import('../views/page/page4/index.vue'),
+  redirect: '/page4/page4-1',  // 重定向到第一个子页面
+  children: [
+    {
+      path: '/page4/page4-1',
+      name: 'page4-1',
+      meta: {
+        title: '页面4-1'
+      },
+      component: () => import('../views/page/page4/Page4-1.vue')
+    },
+    {
+      path: '/page4/page4-2',
+      name: 'page4-2',
+      meta: {
+        title: '页面4-2'
+      },
+      component: () => import('../views/page/page4/Page4-2.vue')
+    },
+    {
+      path: '/page4/page4-3',
+      name: 'page4-3',
+      meta: {
+        title: '页面4-3'
+      },
+      component: () => import('../views/page/page4/Page4-3.vue')
+    },
+    {
+      path: '/page4/page4-4',
+      name: 'page4-4',
+      meta: {
+        title: '页面4-4'
+      },
+      component: () => import('../views/page/page4/Page4-4.vue')
+    },
+    {
+      path: '/page4/page4-5',
+      name: 'page4-5',
+      meta: {
+        title: '页面4-5'
+      },
+      component: () => import('../views/page/page4/Page4-5.vue')
+    },
 
-//   ]
-// },
-// {
-//   path: '/page5',
-//   name: 'page5',
-//   meta: {
-//     title: '调度管理中心'
-//   },
-//   component: () => import('../views/page/page5/index.vue'),
-//   redirect: '/page5/page5-1',  // 重定向到第一个子页面
-//   children: [
-//     {
-//       path: '/page5/page5-1',
-//       name: 'page5-1',
-//       meta: {
-//         title: '页面5-1'
-//       },
-//       component: () => import('../views/page/page5/Page5-1.vue')
-//     },
-//     {
-//       path: '/page5/page5-2',
-//       name: 'page5-2',
-//       meta: {
-//         title: '页面5-2'
-//       },
-//       component: () => import('../views/page/page5/Page5-2.vue')
-//     },
-//     {
-//       path: '/page5/page5-3',
-//       name: 'page5-3',
-//       meta: {
-//         title: '页面5-3'
-//       },
-//       component: () => import('../views/page/page5/Page5-3.vue')
-//     },
-//     {
-//       path: '/page5/page5-4',
-//       name: 'page5-4',
-//       meta: {
-//         title: '页面5-4'
-//       },
-//       component: () => import('../views/page/page5/Page5-4.vue')
-//     },
-//     {
-//       path: '/page5/page5-5',
-//       name: 'page5-5',
-//       meta: {
-//         title: '页面5-5'
-//       },
-//       component: () => import('../views/page/page5/Page5-5.vue')
-//     },
+  ]
+},
+{
+  path: '/page5',
+  name: 'page5',
+  meta: {
+    title: '调度管理中心'
+  },
+  component: () => import('../views/page/page5/index.vue'),
+  redirect: '/page5/page5-1',  // 重定向到第一个子页面
+  children: [
+    {
+      path: '/page5/page5-1',
+      name: 'page5-1',
+      meta: {
+        title: '页面5-1'
+      },
+      component: () => import('../views/page/page5/Page5-1.vue')
+    },
+    {
+      path: '/page5/page5-2',
+      name: 'page5-2',
+      meta: {
+        title: '页面5-2'
+      },
+      component: () => import('../views/page/page5/Page5-2.vue')
+    },
+    {
+      path: '/page5/page5-3',
+      name: 'page5-3',
+      meta: {
+        title: '页面5-3'
+      },
+      component: () => import('../views/page/page5/Page5-3.vue')
+    },
+    {
+      path: '/page5/page5-4',
+      name: 'page5-4',
+      meta: {
+        title: '页面5-4'
+      },
+      component: () => import('../views/page/page5/Page5-4.vue')
+    },
+    {
+      path: '/page5/page5-5',
+      name: 'page5-5',
+      meta: {
+        title: '页面5-5'
+      },
+      component: () => import('../views/page/page5/Page5-5.vue')
+    },
 
-//   ]
-// },
+  ]
+},
 // {
 //   path: '/page6',
 //   name: 'page6',

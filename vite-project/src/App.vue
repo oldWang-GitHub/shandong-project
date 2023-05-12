@@ -1,9 +1,10 @@
 <script setup>
-import { provide } from 'vue';
-  import { RouterView } from 'vue-router';
-  // 引入核心库
+import { onMounted, provide } from 'vue'
+import { RouterView } from 'vue-router'
+// 引入核心库
 import * as echarts from 'echarts/core'
 import { LineChart, BarChart } from 'echarts/charts'
+import { register as registerEcharts } from '@meta2d/chart-diagram'
 // 导入折线图图表
 import {
   TitleComponent,
@@ -29,7 +30,11 @@ echarts.use([
   LineChart,
   BarChart
 ])
-provide('echarts', echarts)
+onMounted(() => {
+  // initMeta2d(data)
+  registerEcharts(echarts)
+  provide('echarts', echarts)
+})
 </script>
 
 <template>
@@ -37,5 +42,4 @@ provide('echarts', echarts)
 </template>
 
 <style scoped>
-
 </style>

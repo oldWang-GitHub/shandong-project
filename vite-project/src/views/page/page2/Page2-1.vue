@@ -5,12 +5,15 @@
   </div>
 </template>
   <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 // 引入封装的meta2d方法
-import {initMeta2d} from '../../../utils/useMeta2d'
+import {initMeta2d } from '../../../utils/useMeta2d'
 import data from '../../../data/光伏发电模块.json'
 onMounted(() => {
   initMeta2d(data)
+})
+onUnmounted(() => {
+  // clearMeta2d()
 })
 </script>
   

@@ -1,9 +1,7 @@
-
 import { Meta2d } from '@meta2d/core'
 import api from '../api'
-
 // 封装meta2d的方法
-const initMeta2d = (data) => {
+const initMeta2d = (data) => { 
     const meta2d = new Meta2d('meta2d')
     const options = {
       disableScale: true, // 禁止缩放
@@ -17,7 +15,9 @@ const initMeta2d = (data) => {
     // 设置预览模式，不可编辑
     meta2d.lock(1)
     // 设置自适应显示 true，完整展示整个图纸；false，短边展示图纸，长边会被截取显示不完整
-    meta2d.fitView(false)
+    //   meta2d.fitView()
+    
+    meta2d.topView()
     return meta2d
   }
 
@@ -34,8 +34,15 @@ const getMeta2dData = (url) => {
         
       })
     })
-
   }
+// 封装清空画布的方法
+const clearMeta2d = () => {
+  window.meta2d.clear()
+}
+//  销毁图纸
+const destroyMeta2d = () => {
+  window.meta2d.destroy()
+}
 
 //封装更新数据的方法
 const updateMetaData = (res) => {
@@ -45,4 +52,4 @@ const updateMetaData = (res) => {
     })
   }
 
-export { initMeta2d, getMeta2dData }
+export { initMeta2d, clearMeta2d, destroyMeta2d, getMeta2dData }

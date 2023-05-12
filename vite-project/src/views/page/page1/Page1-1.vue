@@ -8,21 +8,22 @@
 import { onMounted, onUnmounted } from 'vue'
 import data from '../../../data/微电网系统总体图.json'
 // 引入封装的meta2d方法
-import {initMeta2d, getMeta2dData} from '../../../utils/useMeta2d'
+import {initMeta2d } from '../../../utils/useMeta2d'
 let timer = null
 onMounted(() => {
   // 初始化meta2d
-  initMeta2d(data)
-  getMeta2dData('/data/main')
+  initMeta2d(data,)
+  // getMeta2dData('/data/main')
   // 定时器，每隔1秒更新一次接口数据
-  timer = setInterval(() => {
+  /* timer = setInterval(() => {
     getMeta2dData('/data/main')
-  }, 1000)
+  }, 1000) */
   // 
 })
 
 // 卸载组件时清除定时器
 onUnmounted(() => {
+  // clearMeta2d()
   clearInterval(timer)
 })
 </script>

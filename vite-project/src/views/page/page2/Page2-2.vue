@@ -10,7 +10,7 @@
 import { onMounted, inject } from 'vue'
 // 引入封装的meta2d方法
 import { initMeta2d } from '../../../utils/useMeta2d'
-import data from '../../../data/风电模块1.json'
+import data from '../../../data/风电模块.json'
 // 注册必须的组件
 
 onMounted(() => {
