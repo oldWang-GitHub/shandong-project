@@ -10,6 +10,7 @@
   import {initMeta2d} from '../../../utils/useMeta2d'
   import data from '../../../data/PCC监测.json'
   onMounted(() => {
+
     initMeta2d(data)
   })
   onUnmounted(() => {

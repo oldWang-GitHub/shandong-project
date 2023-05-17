@@ -23,7 +23,7 @@ const routes = [
         meta: {
           title: '综合监控中心'
         },
-        component: () => import('../views/page/page1/index.vue'),
+        component: () => import('../views/page/page1/indexPage1.vue'),
         redirect: '/page1/page1-1',  // 重定向到第一个子页面
         children: [
           {
@@ -75,7 +75,7 @@ const routes = [
     meta: {
       title: '分布电源管理'
     },
-    component: () => import('../views/page/page2/index.vue'),
+    component: () => import('../views/page/page2/indexPage2.vue'),
     redirect: '/page2/page2-1',  // 重定向到第一个子页面
     children: [
       {
@@ -127,7 +127,7 @@ const routes = [
   meta: {
     title: '储能系统管理'
   },
-  component: () => import('../views/page/page3/index.vue'),
+  component: () => import('../views/page/page3/indexPage3.vue'),
   redirect: '/page3/page3-1',  // 重定向到第一个子页面
   children: [
     {
@@ -179,7 +179,7 @@ const routes = [
   meta: {
     title: '智能决策中心'
   },
-  component: () => import('../views/page/page4/index.vue'),
+  component: () => import('../views/page/page4/indexPage4.vue'),
   redirect: '/page4/page4-1',  // 重定向到第一个子页面
   children: [
     {
@@ -231,14 +231,15 @@ const routes = [
   meta: {
     title: '调度管理中心'
   },
-  component: () => import('../views/page/page5/index.vue'),
+  component: () => import('../views/page/page5/indexPage5.vue'),
   redirect: '/page5/page5-1',  // 重定向到第一个子页面
   children: [
     {
       path: '/page5/page5-1',
       name: 'page5-1',
       meta: {
-        title: '页面5-1'
+        title: '页面5-1',
+        keepAlive: true
       },
       component: () => import('../views/page/page5/Page5-1.vue')
     },
@@ -359,41 +360,15 @@ router.beforeEach((to, from, next) => {
       // 如果不是登录页,跳转到登录页
       next({name:'login'})
     }
-  }else{ // menuList中的数据是否存在，不应该在此判断，之后要将其移除
-    // 如果存在,进行跳转
-    // 进行动态路由添加
-    /* if (menuList.length) {
-      // 添加动态路由
-      addDynamicRoutes(menuList).forEach(item => {
-        router.addRoute('home',item)
-      })
-      console.log("to.path",to.query.redirect);
-      console.log("from.path",from.path);
-      // 跳转到目标路由
-      next()
+  }else{ 
+    
+    if(to.path === '/login'){
+      next({name:'home'})
     }else{
-      // 获取菜单列表
-      menuList = getMenuList()
-      // 添加动态路由
-      let route = addDynamicRoutes(menuList)
-      // 添加到路由中
-      route.forEach(item => {
-        router.addRoute('home',item)
-      })
-      // 跳转到目标路由
       next()
-    } */
-    next()
+    }
   }
 })
-/* // 封装获取菜单列表
-function getMenuList() {
-  // 获取菜单列表
-  store.commit('setMenuList', firstMenuList)
-  // 获取菜单列表
-  const menuList = JSON.parse(localStorage.getItem('menuList'))
-  return menuList
-} */
 
 /* // 封装菜单列表转换为路由
 function addDynamicRoutes(list) {
@@ -418,8 +393,6 @@ function addDynamicRoutes(list) {
   })
   return newList
 } */
-
-
 
 // 导出路由
 export default router

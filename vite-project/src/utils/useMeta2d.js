@@ -15,13 +15,28 @@ const initMeta2d = (data) => {
     // 设置预览模式，不可编辑
     meta2d.lock(1)
     // 设置自适应显示 true，完整展示整个图纸；false，短边展示图纸，长边会被截取显示不完整
-    //   meta2d.fitView()
-    
-    meta2d.topView()
+      meta2d.fitView()
+    // 除了使用fitView（）方法才能显示图纸中的echarts图表的背景色
+    // meta2d.topView()
     return meta2d
   }
 
-  // 封装请求数据的方法 参数为接口地址
+  // 清空画布功能可以解决echarts重绘失败问题，但是会导致组态图重绘失败，但不使用的话，图表会重绘失败
+  // 封装清空画布的方法
+  const clearMeta2d = () => {
+    window.meta2d.clear(true)
+  }
+  /* //  销毁图纸
+  const destroyMeta2d = () => {
+    window.meta2d.destroy(false)
+  } */
+/**
+ * 
+ * @param  url为接口地址
+ * 用于http请求数据，如果使用mqtt，就不用这个方法 
+ * @returns 
+ */
+// 封装请求数据的方法 参数为接口地址
 const getMeta2dData = (url) => {
     return new Promise(() => {
       // 请求接口数据 
@@ -35,15 +50,6 @@ const getMeta2dData = (url) => {
       })
     })
   }
-// 封装清空画布的方法
-const clearMeta2d = () => {
-  window.meta2d.clear()
-}
-//  销毁图纸
-const destroyMeta2d = () => {
-  window.meta2d.destroy()
-}
-
 //封装更新数据的方法
 const updateMetaData = (res) => {
     res.forEach((item) => {
@@ -52,4 +58,4 @@ const updateMetaData = (res) => {
     })
   }
 
-export { initMeta2d, clearMeta2d, destroyMeta2d, getMeta2dData }
+export { initMeta2d, clearMeta2d, getMeta2dData }

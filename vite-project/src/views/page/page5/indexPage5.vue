@@ -6,7 +6,12 @@
       </div>
       <!-- 主体内容区域 -->
       <div class="main-content">
-        <router-view />
+        <!-- // 给page5-1设置keep-alive，防止切换页面时，页面重新加载 -->
+        <router-view v-slot="{ Component }">
+          <keep-alive include="Page5-1">
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
       </div>
     </div>
 </template>
@@ -15,7 +20,7 @@
 import { computed } from 'vue'
 import {  useRoute } from 'vue-router'
 import { firstMenuList } from '../../../config/menuList'
-import SideMenu from '../../home/SideMenu.vue'
+import SideMenu from '../../../components/SideMenu.vue'
 // 定义路由
 // const router = useRouter()
 // 定义当前路由
@@ -31,20 +36,20 @@ const secMenuList = computed(()=>{
 })
 </script>
 <style lang="scss" scoped>
+@import '../../../assets/variables.scss';
 .main{
     width: 100%;
     height: 100%;
     display: flex;
   &-sideMenu {
-    width: 200px;
+    width: 240px;
     height: 100%;
-    background-color: #ff5;
   }
   &-content {
-    width: calc(100vw - 200px);
+    width: calc(100vw - 240px);
     height: 100%;
-    background: #021132;
-    padding: 10px;
+    background: $content-backgroundColor;
+    padding: 10px 10px 15px 20px;
     overflow: auto;
   }
 }

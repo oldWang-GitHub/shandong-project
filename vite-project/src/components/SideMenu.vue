@@ -16,8 +16,8 @@
       >
         <!-- 需要图标的在 item 对象中加上属性 icon -->
         <!-- <i :class="item.icon"></i> -->
-        <svg width="194" height="50">
-          <rect class="sidebar-el-menu-item-shape" width="194" height="50" />
+        <svg width="238" height="50">
+          <rect class="sidebar-el-menu-item-shape" width="238" height="50" />
         </svg>
         <span class="sidebar-el-menu-item-text">{{ item.title }}</span>
       </el-menu-item>
@@ -45,7 +45,7 @@ const toIndex = computed(() => {
 </script>
    
   <style lang="scss" scoped>
-  @import '../../assets/variables.scss';
+  @import '../assets/variables.scss';
 /* 左侧菜单栏定位和位置大小设定 */
 .sidebar {
   width: 100%;
@@ -59,7 +59,7 @@ const toIndex = computed(() => {
     overflow: hidden;
     /* 左侧二级菜单项的样式 */
     &-item {
-      font-size: 14px;
+      font-size: 16px;
       // padding-left: 35px;
       color: $sidebar-fontcolor-unselected;
       // transition: all 0.1s;
@@ -83,7 +83,7 @@ const toIndex = computed(() => {
         // 定义线的宽度
         stroke-width: 6;
         // 设置虚线 长度 间隔
-        stroke-dasharray: 120, 440;
+        stroke-dasharray: 120, 500;
         // 虚线偏移量
         stroke-dashoffset: 270;
         // 过渡动画

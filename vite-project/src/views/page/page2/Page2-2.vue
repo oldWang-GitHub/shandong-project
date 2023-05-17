@@ -1,23 +1,20 @@
 <template>
   <div class="main">
     <div id="meta2d"></div>
-    <div id="echart1"></div>
-    <div id="echart2"></div>
-    <div id="echart3"></div>
   </div>
 </template>
 <script setup>
-import { onMounted, inject } from 'vue'
+import { onMounted } from 'vue'
 // 引入封装的meta2d方法
 import { initMeta2d } from '../../../utils/useMeta2d'
-import data from '../../../data/风电模块.json'
+import data from '../../../data/风电模块监控.json'
 // 注册必须的组件
 
 onMounted(() => {
   initMeta2d(data)
-  initEchart('echart1', options1)
-  initEchart('echart2', options2)
-  initEchart('echart3', options3)
+  // initEchart('echart1', options1)
+  // initEchart('echart2', options2)
+  // initEchart('echart3', options3)
   /* const options = {
   title: {
     text: 'Stacked Line'
@@ -83,8 +80,7 @@ onMounted(() => {
 
   // myChart.setOption(options)
 })
-const echarts = inject('echarts')
-// 封装绘制图表的方法
+/* // 封装绘制图表的方法
 const initEchart = (id, options) => {
   const myChart = echarts.init(document.getElementById(id), 'dark')
   // 设置图表的背景颜色
@@ -332,7 +328,7 @@ const options3 ={
 							"type": "bar"
 						}
 					],
-				}
+				} */
 </script>
   
 <style lang="scss" scoped>
@@ -343,16 +339,16 @@ const options3 ={
   display: flex;
 }
 #meta2d {
-  width: 35%;
+  width: 100%;
   height: 100%;
   background-color: #fff;
 }
-#echart1,
+/* #echart1,
 #echart2,
 #echart3 {
   width: 400px;
   height: 400px;
   background-color: #fff;
   margin:0 4px;
-}
+} */
 </style>

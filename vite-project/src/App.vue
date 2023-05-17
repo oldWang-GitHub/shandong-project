@@ -1,9 +1,9 @@
 <script setup>
-import { onMounted, provide } from 'vue'
+import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 // 引入核心库
 import * as echarts from 'echarts/core'
-import { LineChart, BarChart } from 'echarts/charts'
+import { LineChart, BarChart,GaugeChart } from 'echarts/charts'
 import { register as registerEcharts } from '@meta2d/chart-diagram'
 // 导入折线图图表
 import {
@@ -28,12 +28,12 @@ echarts.use([
   LabelLayout,
   UniversalTransition,
   LineChart,
-  BarChart
+  BarChart,
+  GaugeChart
 ])
 onMounted(() => {
-  // initMeta2d(data)
+  // 注册echarts，这样才可以在meta2d中使用echarts
   registerEcharts(echarts)
-  provide('echarts', echarts)
 })
 </script>
 

@@ -15,7 +15,7 @@
         <el-form-item prop="userPassword">
           密码 :
           <!-- 密码框 -->
-          <el-input type="password" :prefix-icon="View" v-model="user.userPassword" />
+          <el-input type="password" :prefix-icon="Lock" v-model="user.userPassword" />
         </el-form-item>
         
         <el-form-item>
@@ -31,7 +31,7 @@
 // 引入响应式
 import { reactive, ref } from 'vue'
 // 引入element图标
-import { User, View } from '@element-plus/icons-vue'
+import { User, Lock } from '@element-plus/icons-vue'
 // 引入路由
 import { useRouter } from 'vue-router'
 // 导入api,表单验证成功后,进行ajax请求
@@ -107,6 +107,7 @@ function login(formRef) {
   height: 100vh;
   // 设置模态框
   .modal {
+    color: #409eff;
     // 设置宽度, 高度由内容撑起来
     width: 500px;
     padding: 50px;
@@ -124,6 +125,7 @@ function login(formRef) {
       font-size: 50px;
       line-height: 1.5;
       text-align: center;
+      
       margin-bottom: 30px;
     }
     // 设置按钮

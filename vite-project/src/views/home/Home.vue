@@ -53,6 +53,7 @@
     <!-- 页面左侧二级菜单栏，和主体内容区域部分 -->
     <div class="main">
       <router-view />
+      
     </div>
   </div>
 </template>
@@ -88,8 +89,12 @@ const router = useRouter()
 const route = useRoute()
 // 切换菜单栏
 function handleSelect(path) {
+  
   router.push({
     path: path
+  }).then(() => {
+    // 重新加载页面
+    window.location.reload()
   })
 }
 // 定义二级菜单
@@ -133,7 +138,8 @@ function handleCommand(command) {
   align-items: center;
 
   &-logo {
-    font-size: 22px;
+    font-size: 28px;
+    // width: 200px;
     color: $nav-fontcolor;
     margin-left: 50px;
   }
@@ -147,7 +153,7 @@ function handleCommand(command) {
       border-bottom: none;
       &-item {
         color: $nav-fontcolor;
-        font-size: 16px;
+        font-size: 18px;
         margin: 0 15px;
         &.is-active {
           border-bottom: 2px solid #3989fa;

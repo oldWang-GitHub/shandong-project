@@ -6,6 +6,7 @@
 </template>
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
+// 导入JSON图纸
 import data from '../../../data/微电网系统总体图.json'
 // 引入封装的meta2d方法
 import {initMeta2d } from '../../../utils/useMeta2d'
